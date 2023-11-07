@@ -22,19 +22,19 @@ import classes from "./main-sidebar.module.css";
 import Link from "next/link";
 
 const links = [
-  { icon: IconBulb, label: "Activity", notifications: 3 },
-  { icon: IconCheckbox, label: "Tasks", notifications: 4 },
-  { icon: IconUser, label: "Contacts" },
+  { icon: IconBulb, label: "Home" },
+  { icon: IconCheckbox, label: "Shares" },
+  { icon: IconUser, label: "Help" },
 ];
 
 const collections = [
   { emoji: "👍", label: "Home", href: "/home" },
   { emoji: "🚚", label: "Help", href: "/help" },
   { emoji: "💸", label: "Shares", href: "/shares" },
-  { emoji: "💰", label: "Profits", href: "/home" },
-  { emoji: "✨", label: "Reports", href: "/home" },
-  { emoji: "🛒", label: "Orders", href: "/home" },
-  { emoji: "📅", label: "Events", href: "/home" },
+  { emoji: "💰", label: "doc1", href: "/doc/1" },
+  { emoji: "✨", label: "folder1", href: "/folder/1" },
+  { emoji: "🛒", label: "doc2", href: "/doc/1" },
+  { emoji: "📅", label: "folder2", href: "/folder/1" },
   { emoji: "🙈", label: "Debts", href: "/home" },
   { emoji: "💁‍♀️", label: "Customers", href: "/home" },
 ];
