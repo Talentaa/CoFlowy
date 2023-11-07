@@ -9,6 +9,8 @@ import { useState } from "react";
 export default function App({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient());
 
+  const Layout = Component.Layout || (({ children }) => children);
+
   return (
     <SessionContextProvider
       supabaseClient={supabaseClient}
@@ -16,7 +18,9 @@ export default function App({ Component, pageProps }) {
     >
       <MantineProvider>
         <Notifications />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </MantineProvider>
     </SessionContextProvider>
   );
