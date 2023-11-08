@@ -60,7 +60,6 @@ export default function AuthForm(props) {
         email,
         password,
       });
-      console.log(password);
 
       if (signUpError) {
         notifications.show({

@@ -1,12 +1,13 @@
-import { useDisclosure } from "@mantine/hooks";
 import { AppShell, Burger, Group } from "@mantine/core";
 import MainSidebar from "./main-sidebar";
 import MainHeader from "./main-header";
-import ToggleColor from "../ui/toggle-color";
+
+import { useSelector } from "react-redux";
 
 export default function Layout({ children }) {
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+  const { desktopSiderbarOpened, mobileSiderbarOpened } = useSelector(
+    (state) => state.ui
+  );
 
   return (
     <AppShell
@@ -15,31 +16,15 @@ export default function Layout({ children }) {
       navbar={{
         width: 300,
         breakpoint: "sm",
-        collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+        collapsed: {
+          mobile: !mobileSiderbarOpened,
+          desktop: !desktopSiderbarOpened,
+        },
       }}
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md" justify="space-between">
-          <Group>
-            <Burger
-              opened={mobileOpened}
-              onClick={toggleMobile}
-              hiddenFrom="sm"
-              size="sm"
-            />
-            <Burger
-              opened={desktopOpened}
-              onClick={toggleDesktop}
-              visibleFrom="sm"
-              size="sm"
-            />
-            <MainHeader />
-          </Group>
-          <Group>
-            <ToggleColor />
-          </Group>
-        </Group>
+        <MainHeader />
       </AppShell.Header>
       <AppShell.Navbar>
         <MainSidebar />

@@ -14,6 +14,7 @@
     "@mantine/hooks": "^7.2.1",
     "@mantine/notifications": "^7.2.1",
     "@mantine/tiptap": "^7.2.1",
+    "@reduxjs/toolkit": "^1.9.7",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/auth-helpers-react": "^0.4.2",
     "@supabase/supabase-js": "^2.38.4",
@@ -32,7 +33,8 @@
     "next": "14.0.1",
     "next-auth": "^4.24.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.3"
   },
   "devDependencies": {
     "postcss": "^8.4.31",
