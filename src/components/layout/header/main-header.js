@@ -1,5 +1,5 @@
 import { Breadcrumbs, Anchor } from "@mantine/core";
-import ToggleColor from "../ui/toggle-color";
+import ToggleColor from "./toggle-color";
 import { toggleDesktopSidebar, toggleMobileSidebar } from "@/store/ui";
 import { Burger, Group } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,7 +22,7 @@ export default function MainHeader() {
   ));
 
   return (
-    <Group h="100%" px="md" justify="space-between">
+    <Group h="100%" px="md" justify="space-between" >
       <Group>
         <Burger
           opened={desktopSiderbarOpened}

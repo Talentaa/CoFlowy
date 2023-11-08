@@ -1,6 +1,6 @@
 import { AppShell, Burger, Group } from "@mantine/core";
-import MainSidebar from "./main-sidebar";
-import MainHeader from "./main-header";
+import MainSidebar from "./sidebar/main-sidebar";
+import MainHeader from "./header/main-header";
 
 import { useSelector } from "react-redux";
 
@@ -12,7 +12,7 @@ export default function Layout({ children }) {
   return (
     <AppShell
       layout="alt"
-      header={{ height: 60 }}
+      header={{ height: 63 }}
       navbar={{
         width: 300,
         breakpoint: "sm",
