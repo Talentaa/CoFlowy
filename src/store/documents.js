@@ -1,15 +1,13 @@
 import { documentsApi } from "@/api";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  documents: [],
-  isLoading: false,
-  error: null,
-};
-
 export const documentsSlice = createSlice({
   name: "documents",
-  initialState,
+  initialState: {
+    documents: [],
+    isLoading: false,
+    error: null,
+  },
   reducers: {
     setDocuments: (state, action) => {
       state.documents = action.payload;
@@ -47,4 +45,4 @@ export const documentsSlice = createSlice({
 export const { setDocuments, insertDocument, updateDocument, deleteDocument } =
   documentsSlice.actions;
 
-export default documentsSlice.reducer
+export default documentsSlice.reducer;

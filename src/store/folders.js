@@ -1,15 +1,13 @@
 import { foldersApi } from "@/api";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  folders: [],
-  isLoading: false,
-  error: null,
-};
-
 export const foldersSlice = createSlice({
   name: "folders",
-  initialState,
+  initialState: {
+    folders: [],
+    isLoading: false,
+    error: null,
+  },
   reducers: {
     setFolders: (state, action) => {
       state.folders = action.payload;

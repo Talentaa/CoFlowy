@@ -7,7 +7,7 @@ const store = configureStore({
   reducer: {
     ui: uiReducer,
     documents: documentsReducer,
-    foldersReducer,
+    folders: foldersReducer,
   },
 });
 

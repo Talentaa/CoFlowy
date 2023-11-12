@@ -2,7 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 
 export const fetchFolders = createAsyncThunk("folders/fetch_all", async () => {
-    console.log(supabaseClient);
   const { data, error } = await createPagesBrowserClient()
     .from("user_folders_tree")
     .select("*");
