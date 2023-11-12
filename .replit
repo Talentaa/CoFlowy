@@ -1,0 +1,14 @@
+modules = ["nodejs-20"]
+hidden = [".config", "package-lock.json"]
+run = "pnpm run start"
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["sh", "-c", "pnpm run start"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
