@@ -5,6 +5,7 @@ import { Burger, Group } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
+import Link from "next/link";
 
 export default function MainHeader() {
   const dispatch = useDispatch();
@@ -94,14 +95,14 @@ export default function MainHeader() {
         <Breadcrumbs>
           {!!activeFolder &&
             folderPath?.map((folder, index) => (
-              <Anchor href={`/folder/${folder.id}`} key={index}>
+              <Link href={`/folder/${folder.id}`} key={index}>
                 {folder.name.trim() || "Untitled"}
-              </Anchor>
+              </Link>
             ))}
 
           {!!activeDocument &&
             documentPath?.map((item, index) => (
-              <Anchor
+              <Link
                 key={index}
                 href={`/${item.type === "document" ? "doc" : "folder"}/${
                   item.id
@@ -110,7 +111,7 @@ export default function MainHeader() {
                 {(item.type === "document"
                   ? item.title.trim()
                   : item.name.trim()) || "Sans titre"}
-              </Anchor>
+              </Link>
             ))}
         </Breadcrumbs>
       </Group>

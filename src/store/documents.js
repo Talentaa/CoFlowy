@@ -37,7 +37,8 @@ export const documentsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(documentsApi.fetchDocuments.rejected, (state, action) => {
-        (state.isLoading = false), (state.error = action.error.message);
+        state.isLoading = false;
+        state.error = action.error.message ?? null;
       });
   },
 });

@@ -18,7 +18,7 @@ export const fetchDocuments = createAsyncThunk(
 export const insertDocument = createAsyncThunk(
   "documents/insert",
   async (document) => {
-    const { data, error } = await createPagesBrowserClient()()
+    const { data, error } = await createPagesBrowserClient()
       .from("documents")
       .insert(document)
       .select("id")
@@ -35,10 +35,12 @@ export const insertDocument = createAsyncThunk(
 export const updateDocument = createAsyncThunk(
   "documents/update",
   async ({ id, ...updates }) => {
-    const { data, error } = await createPagesBrowserClient()()
+    const { data, error } = await createPagesBrowserClient()
       .from("documents")
       .update(updates)
       .match({ id });
+
+      console.log(data, error)
 
     if (error) {
       throw error;

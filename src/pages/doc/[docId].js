@@ -1,13 +1,15 @@
 import Layout from "@/components/layout/layout";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useSession } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { useUser } from "@supabase/auth-helpers-react";
+import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Doc() {
   const session = useSession();
-  const supabaseClient = useSupabaseClient();
+  const user = useUser();
+  console.log(session, user);
 
   const router = useRouter();
   const { docId } = router.query;
@@ -24,10 +26,10 @@ export default function Doc() {
       if (document) {
         setPermission("edit");
       } else {
-        supabaseClient
+        createPagesBrowserClient()
           .rpc("get_user_permission_for_document", {
             document_id: docId,
-            user_id: session?.user_id || null,
+            user_id: user?.id || null,
             document: null,
           })
           .single()
@@ -38,9 +40,14 @@ export default function Doc() {
     return () => {
       setPermission("loading");
     };
-  }, [docId, document, isLoadingDocument, session?.user.id]);
+  }, [docId, document, isLoadingDocument, user?.id]);
 
-  return <h1>Document {docId}</h1>;
+  return (
+    <>
+      <h1>docId {docId}</h1>
+      <h1>userId {user?.id}</h1>
+    </>
+  );
 }
 
 Doc.Layout = Layout;

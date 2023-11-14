@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  desktopSiderbarOpened: true,
-  mobileSiderbarOpened: false,
-};
-
 export const uiSlice = createSlice({
   name: "ui",
-  initialState,
+  initialState: {
+    desktopSiderbarOpened: true,
+    mobileSiderbarOpened: false,
+  },
   reducers: {
     toggleDesktopSidebar(state) {
       state.desktopSiderbarOpened = !state.desktopSiderbarOpened;
