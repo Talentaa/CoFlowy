@@ -14,7 +14,7 @@ import {
 } from "@mantine/core";
 import { createSelector } from "@reduxjs/toolkit";
 
-import DocumentFolderCard from "@/components/document-folder-card";
+import DocumentFolderCard from "@/components/ui/document-folder-card";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSwitchVertical, IconPlus } from "@tabler/icons-react";
 

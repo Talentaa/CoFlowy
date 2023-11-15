@@ -47,12 +47,21 @@ dependencies:
   '@tiptap/extension-collaboration-cursor':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)(y-prosemirror@1.2.1)
+  '@tiptap/extension-document':
+    specifier: ^2.1.12
+    version: 2.1.12(@tiptap/core@2.1.12)
+  '@tiptap/extension-heading':
+    specifier: ^2.1.12
+    version: 2.1.12(@tiptap/core@2.1.12)
   '@tiptap/extension-highlight':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)
   '@tiptap/extension-link':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
+  '@tiptap/extension-paragraph':
+    specifier: ^2.1.12
+    version: 2.1.12(@tiptap/core@2.1.12)
   '@tiptap/extension-placeholder':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
@@ -92,6 +101,9 @@ dependencies:
   express:
     specifier: ^4.18.2
     version: 4.18.2
+  express-ws:
+    specifier: ^5.0.2
+    version: 5.0.2(express@4.18.2)
   next:
     specifier: 14.0.1
     version: 14.0.1(react-dom@18.2.0)(react@18.2.0)
@@ -113,6 +125,9 @@ dependencies:
   ws:
     specifier: ^8.14.2
     version: 8.14.2
+  y-indexeddb:
+    specifier: ^9.0.12
+    version: 9.0.12(yjs@13.6.8)
   y-prosemirror:
     specifier: ^1.2.1
     version: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
@@ -2401,6 +2416,19 @@ packages:
   /etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /express-ws@5.0.2(express@4.18.2):
+    resolution: {integrity: sha512-0uvmuk61O9HXgLhGl3QhNSEtRsQevtmbL94/eILaliEADZBHZOQUAiHFrGPrgsjikohyrmSG5g+sCfASTt0lkQ==}
+    engines: {node: '>=4.5.0'}
+    peerDependencies:
+      express: ^4.0.0 || ^5.0.0-alpha.1
+    dependencies:
+      express: 4.18.2
+      ws: 7.5.9
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: false
 
   /express@4.18.2:
@@ -5286,7 +5314,6 @@ packages:
       utf-8-validate:
         optional: true
     dev: false
-    optional: true
 
   /ws@8.14.2:
     resolution: {integrity: sha512-wEBG1ftX4jcglPxgFCMJmZ2PLtSbJ2Peg6TmpJFTbe9GZYOQCDPdMYu/Tm0/bGZkw8paZnJY45J4K2PZrLYq8g==}
@@ -5306,6 +5333,16 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /y-indexeddb@9.0.12(yjs@13.6.8):
+    resolution: {integrity: sha512-9oCFRSPPzBK7/w5vOkJBaVCQZKHXB/v6SIT+WYhnJxlEC61juqG0hBrAf+y3gmSMLFLwICNH9nQ53uscuse6Hg==}
+    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
+    peerDependencies:
+      yjs: ^13.0.0
+    dependencies:
+      lib0: 0.2.87
+      yjs: 13.6.8
+    dev: false
 
   /y-leveldb@0.1.2(yjs@13.6.8):
     resolution: {integrity: sha512-6ulEn5AXfXJYi89rXPEg2mMHAyyw8+ZfeMMdOtBbV8FJpQ1NOrcgi6DTAcXof0dap84NjHPT2+9d0rb6cFsjEg==}

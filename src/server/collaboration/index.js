@@ -1,16 +1,19 @@
-const { WebSocketServer } = require("ws");
+const WebSocket = require("ws");
 const { Server } = require("@hocuspocus/server");
 
-const AuthenticationExtension = require("./AuthenticationExtension.js");
-const PersistenceExtension = require("./PersistenceExtension.js");
+const { onAuthenticate } = require("./AuthenticationExtension");
+const { onStoreDocument, onLoadDocument } = require("./PersistenceExtension");
 
 const initCollaboration = (server) => {
-  const wss = new WebSocketServer({ noServer: true });
+  const wss = new WebSocket.Server({ noServer: true });
+
   const hocuspocus = Server.configure({
     debounce: 5000,
     maxDebounce: 15000,
     timeout: 30000,
-    extensions: [new PersistenceExtension(), new AuthenticationExtension()],
+    onAuthenticate,
+    onStoreDocument,
+    onLoadDocument,
   });
 
   wss.on("connection", (socket) => {
@@ -32,8 +35,10 @@ const initCollaboration = (server) => {
           hocuspocus.handleConnection(client, req, documentName);
         });
       }
+
       return;
     }
+
     if (req.url === "/_next/webpack-hmr") {
       return;
     }

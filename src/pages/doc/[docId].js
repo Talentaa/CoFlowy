@@ -5,21 +5,34 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useUser } from "@supabase/auth-helpers-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
+import { createSelector } from "@reduxjs/toolkit";
+import { Flex, Loader, Text, Skeleton } from "@mantine/core";
+import dynamic from "next/dynamic";
 
-export default function Doc() {
+const DocumentEditor = dynamic(() => import("@/components/editor/editor"), {
+  ssr: false,
+  loading: () => <h1>Loading 2</h1>,
+});
+
+const selectDocument = createSelector(
+  [(state) => state.documents, (state, docId) => docId],
+  (documents, docId) => ({
+    document: documents.documents.find((d) => d.id === docId),
+    isLoadingDocument: documents.isLoading,
+  })
+);
+
+export default function Document() {
   const session = useSession();
   const user = useUser();
-  console.log(session, user);
 
   const router = useRouter();
   const { docId } = router.query;
 
-  const { document, isLoadingDocument } = useSelector((state) => ({
-    document: state.documents.documents.find((d) => d.id === docId),
-    isLoadingDocument: state.documents.isLoading,
-  }));
-
-  const [permssion, setPermission] = useState("loading");
+  const { document, isLoadingDocument } = useSelector((state) =>
+    selectDocument(state, docId)
+  );
+  const [permission, setPermission] = useState("loading");
 
   useEffect(() => {
     if (docId && !isLoadingDocument) {
@@ -44,10 +57,35 @@ export default function Doc() {
 
   return (
     <>
-      <h1>docId {docId}</h1>
-      <h1>userId {user?.id}</h1>
+      {["read", "edit"].includes(permission) ? (
+        <DocumentEditor
+          documentId={docId}
+          user={{ emial: user?.email }}
+          token={
+            session
+              ? JSON.stringify({
+                  access_token: session.access_token,
+                  refresh_token: session.refresh_token,
+                })
+              : "anonymous"
+          }
+          editable={permission === "edit"}
+        />
+      ) : (
+        <Flex
+          justify="center"
+          align="center"
+          style={{ width: "100%", height: "100%" }}
+        >
+          {permission === "loading" ? (
+            <Loader color="blue" />
+          ) : (
+            <Text>No permission to access this document</Text>
+          )}
+        </Flex>
+      )}
     </>
   );
 }
 
-Doc.Layout = Layout;
+Document.Layout = Layout;
