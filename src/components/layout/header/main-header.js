@@ -1,17 +1,23 @@
-import { Breadcrumbs, Anchor } from "@mantine/core";
+import { Breadcrumbs, ActionIcon, Burger, Group, Button } from "@mantine/core";
 import ToggleColor from "./toggle-color";
+import ShareDocumentButton from "./share-document-button";
 import { toggleDesktopSidebar, toggleMobileSidebar } from "@/store/ui";
-import { Burger, Group } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 import Link from "next/link";
+import { useSession } from "@supabase/auth-helpers-react";
+import { IconHeart } from "@tabler/icons-react";
+import { IconHeartFilled } from "@tabler/icons-react";
+import { documentsApi } from "@/api";
 
 export default function MainHeader() {
   const dispatch = useDispatch();
   const { desktopSiderbarOpened, mobileSiderbarOpened } = useSelector(
     (state) => state.ui
   );
+
+  const session = useSession();
 
   const router = useRouter();
   const { docId, folderId } = router.query;
@@ -110,12 +116,34 @@ export default function MainHeader() {
               >
                 {(item.type === "document"
                   ? item.title.trim()
-                  : item.name.trim()) || "Sans titre"}
+                  : item.name.trim()) || "Untitled"}
               </Link>
             ))}
         </Breadcrumbs>
       </Group>
       <Group>
+        {!session && (
+          <Button onClick={() => router.push("/auth")}>Sign in</Button>
+        )}
+        {!!activeDocument && (
+          <>
+            <ActionIcon
+              variant="subtle"
+              color="red"
+              onClick={() => {
+                dispatch(
+                  documentsApi.updateDocument({
+                    id: docId,
+                    favorite: !activeDocument.favorite,
+                  })
+                );
+              }}
+            >
+              {activeDocument?.favorite ? <IconHeartFilled /> : <IconHeart />}
+            </ActionIcon>
+            <ShareDocumentButton documentId={docId} />
+          </>
+        )}
         <ToggleColor />
       </Group>
     </Group>

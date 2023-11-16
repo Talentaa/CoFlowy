@@ -7,6 +7,7 @@ const Heading = require("@tiptap/extension-heading");
 const Text = require("@tiptap/extension-text");
 
 const { getSupabaseClient } = require("../util/supabase");
+const { default: StarterKit } = require("@tiptap/starter-kit");
 
 async function onLoadDocument({ documentName, context, document: ydoc }) {
   const documentId = documentName.split(".").pop();
@@ -77,21 +78,14 @@ async function onStoreDocument({ documentName, document: ydoc, context }) {
     console.log(`Persisting document ${documentId} for anonymous user.`);
   }
 
-  const title = Node.fromJSON(
-    getSchema([Document, Text, Heading]),
-    yDocToProsemirrorJSON(ydoc, "title")
-  ).textContent;
-
   const docNode = Node.fromJSON(
-    getSchema([Document, Text, Heading]),
+    getSchema([
+      StarterKit.configure({
+        history: false,
+      }),
+    ]),
     yDocToProsemirrorJSON(ydoc, "default")
   );
-
-  const text_preview = docNode
-    .textBetween(0, docNode.nodeSize - 2, " ")
-    .slice(0, 100);
-
-  const state = Y.encodeStateAsUpdate(ydoc);
 
   const supabaseClient = session
     ? await getSupabaseClient({
@@ -104,14 +98,6 @@ async function onStoreDocument({ documentName, document: ydoc, context }) {
     throw new Error("Invalid session.");
   }
 
-  const { data, error } = await supabaseClient
-    .from("documents")
-    .update({ title, state, text_preview })
-    .eq("id", documentId);
-
-  if (error) {
-    console.error(error);
-  }
 }
 
 module.exports = { onLoadDocument, onStoreDocument };
