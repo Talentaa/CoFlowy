@@ -6,26 +6,26 @@ settings:
 
 dependencies:
   '@hocuspocus/provider':
-    specifier: ^2.7.1
-    version: 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+    specifier: ^2.8.0
+    version: 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
   '@hocuspocus/server':
-    specifier: ^2.7.1
-    version: 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+    specifier: ^2.8.0
+    version: 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
   '@mantine/core':
-    specifier: ^7.2.1
-    version: 7.2.1(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.2.2
+    version: 7.2.2(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/form':
-    specifier: ^7.2.1
-    version: 7.2.1(react@18.2.0)
+    specifier: ^7.2.2
+    version: 7.2.2(react@18.2.0)
   '@mantine/hooks':
-    specifier: ^7.2.1
-    version: 7.2.1(react@18.2.0)
+    specifier: ^7.2.2
+    version: 7.2.2(react@18.2.0)
   '@mantine/notifications':
-    specifier: ^7.2.1
-    version: 7.2.1(@mantine/core@7.2.1)(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.2.2
+    version: 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/tiptap':
-    specifier: ^7.2.1
-    version: 7.2.1(@mantine/core@7.2.1)(@mantine/hooks@7.2.1)(@tabler/icons-react@2.40.0)(@tiptap/extension-link@2.1.12)(@tiptap/react@2.1.12)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^7.2.2
+    version: 7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(@tabler/icons-react@2.40.0)(@tiptap/extension-link@2.1.12)(@tiptap/react@2.1.12)(react-dom@18.2.0)(react@18.2.0)
   '@reduxjs/toolkit':
     specifier: ^1.9.7
     version: 1.9.7(react-redux@8.1.3)(react@18.2.0)
@@ -43,10 +43,10 @@ dependencies:
     version: 2.40.0(react@18.2.0)
   '@tiptap/extension-collaboration':
     specifier: ^2.1.12
-    version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)
+    version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)
   '@tiptap/extension-collaboration-cursor':
     specifier: ^2.1.12
-    version: 2.1.12(@tiptap/core@2.1.12)(y-prosemirror@1.2.1)
+    version: 2.1.12(@tiptap/core@2.1.12)(y-prosemirror@1.0.20)
   '@tiptap/extension-document':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)
@@ -108,8 +108,8 @@ dependencies:
     specifier: 14.0.1
     version: 14.0.1(react-dom@18.2.0)(react@18.2.0)
   next-auth:
-    specifier: ^4.24.4
-    version: 4.24.4(next@14.0.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^4.24.5
+    version: 4.24.5(next@14.0.1)(react-dom@18.2.0)(react@18.2.0)
   prosemirror-model:
     specifier: ^1.19.3
     version: 1.19.3
@@ -129,11 +129,11 @@ dependencies:
     specifier: ^9.0.12
     version: 9.0.12(yjs@13.6.8)
   y-prosemirror:
-    specifier: ^1.2.1
-    version: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
+    specifier: 1.0.20
+    version: 1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
   y-webrtc:
-    specifier: ^10.2.5
-    version: 10.2.5(yjs@13.6.8)
+    specifier: ^10.2.6
+    version: 10.2.6(yjs@13.6.8)
   y-websocket:
     specifier: ^1.5.0
     version: 1.5.0(yjs@13.6.8)
@@ -143,8 +143,8 @@ dependencies:
 
 devDependencies:
   '@hocuspocus/cli':
-    specifier: ^2.7.1
-    version: 2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(y-protocols@1.0.6)(yjs@13.6.8)
+    specifier: ^2.8.0
+    version: 2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(y-protocols@1.0.6)(yjs@13.6.8)
   eslint:
     specifier: 8.53.0
     version: 8.53.0
@@ -158,14 +158,14 @@ devDependencies:
     specifier: ^8.4.31
     version: 8.4.31
   postcss-preset-mantine:
-    specifier: ^1.9.1
-    version: 1.9.1(postcss@8.4.31)
+    specifier: ^1.11.0
+    version: 1.11.0(postcss@8.4.31)
   postcss-simple-vars:
     specifier: ^7.0.1
     version: 7.0.1(postcss@8.4.31)
   prettier:
-    specifier: ^3.0.3
-    version: 3.0.3
+    specifier: ^3.1.0
+    version: 3.1.0
 
 packages:
 
@@ -203,7 +203,7 @@ packages:
       debug: 4.3.4
       espree: 9.6.1
       globals: 13.23.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       minimatch: 3.1.2
@@ -230,8 +230,8 @@ packages:
       '@floating-ui/utils': 0.1.6
     dev: false
 
-  /@floating-ui/react-dom@2.0.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-wOoKUw2P24/OXbNr3bbCqWgoltsyY7lFBDPVtjj/V4WDIJ5hja2C/r+CoWmS+Y75Ahndds3wa7eJRhnJxTCJaQ==}
+  /@floating-ui/react-dom@2.0.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CF8k2rgKeh/49UrnIBs4BdxPUV6vize/Db1d/YbCLyp9GiVZ0BEwf5AiDSxJRCr6yOkGqTFHtmrULxkEfYZ7dQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -247,7 +247,7 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@floating-ui/react-dom': 2.0.3(react-dom@18.2.0)(react@18.2.0)
+      '@floating-ui/react-dom': 2.0.4(react-dom@18.2.0)(react@18.2.0)
       aria-hidden: 1.2.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -264,14 +264,14 @@ packages:
     dev: true
     optional: true
 
-  /@hocuspocus/cli@2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-a66WbMTnhITTVKObmRIYSUDFmIrHMWzO1lAuBzdcmV5OGb45UwppacFn/EWIsDHp49Uica2nepUN8Hctb39crw==}
+  /@hocuspocus/cli@2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-vZ1Gt/TunljDC/envn1H9/Ad8NGF56q6ZMbaKr5XRpJyZfN04YaD5kOJuIYFpUqXA6A1UgMRPHmDm2Y3+GBSsQ==}
     hasBin: true
     dependencies:
-      '@hocuspocus/extension-logger': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
-      '@hocuspocus/extension-sqlite': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
-      '@hocuspocus/extension-webhook': 2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(y-protocols@1.0.6)(yjs@13.6.8)
-      '@hocuspocus/server': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/extension-logger': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/extension-sqlite': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/extension-webhook': 2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/server': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
       meow: 12.1.1
     transitivePeerDependencies:
       - '@tiptap/pm'
@@ -286,17 +286,17 @@ packages:
       - yjs
     dev: true
 
-  /@hocuspocus/common@2.7.1:
-    resolution: {integrity: sha512-mnwBn7b2g23rUmYA1+X+FrIwU9aODmRMWe7ypQdjL/MgzlZWrwqFFr0b9u4AhBrwqRTg+L8KCp8SDkpkt2OTtQ==}
+  /@hocuspocus/common@2.8.0:
+    resolution: {integrity: sha512-n+iNX3l0jgXMYJkw75Pl7LTAaNjFJ23ERop8GloTTDo8sXPvTDlppcpFUFdB5aZS+8bJPBKLQnm9OYZ6WZq/4w==}
     dependencies:
       lib0: 0.2.87
 
-  /@hocuspocus/extension-database@2.7.1(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-fRGs4itOsMTjkCZ9oKXiS/1wwgPQ+XRMMoLdmPadaQhDAsncmQ/socL2uIdHCs8ZdxlRX/liJx7i+jok8aVZzw==}
+  /@hocuspocus/extension-database@2.8.0(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-kYhgyo+CiHfU5VrKz2hZvQIC7lmU8wECnWVOmvqvCnPHVg3ZGOQeaxVspe2ajCSoGLxe75bcnwQtkkEeNIHf2A==}
     peerDependencies:
       yjs: ^13.6.4
     dependencies:
-      '@hocuspocus/server': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/server': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
       yjs: 13.6.8
     transitivePeerDependencies:
       - bufferutil
@@ -304,10 +304,10 @@ packages:
       - y-protocols
     dev: true
 
-  /@hocuspocus/extension-logger@2.7.1(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-45KmAeVbbd76jvskZIk9MbBSYGBompANnpGe0ac1a+9DGVPWGUkncA/tHZu6svWUcjiqXDPwXj463tCCjBG2Cw==}
+  /@hocuspocus/extension-logger@2.8.0(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-bFqYDCwQxwT6AUG4R0efHEFTS3smDPEOImmjOcBrOSiYE6PDPUI+bfPgUm+6ECPE815OWVHobqmBfFVA2In/IA==}
     dependencies:
-      '@hocuspocus/server': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/server': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -315,10 +315,10 @@ packages:
       - yjs
     dev: true
 
-  /@hocuspocus/extension-sqlite@2.7.1(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-L6oOOTAFuKiOJutUmbC/8HfHCPuLKxUFaTOkZkMtDftxLYqPcjPTthdfGM4aJlTEwfAd7peE6wMVTSTpdmRicw==}
+  /@hocuspocus/extension-sqlite@2.8.0(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-zLxsB8xB5iAe88nVwvU58IkZ06MhneTy1sGVFiQqzll4QBExSN9v1a+8hh2IBKmYVDGp98nJkOuSOhD5SZVmzQ==}
     dependencies:
-      '@hocuspocus/extension-database': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/extension-database': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
       kleur: 4.1.5
       sqlite3: 5.1.6
     transitivePeerDependencies:
@@ -331,15 +331,15 @@ packages:
       - yjs
     dev: true
 
-  /@hocuspocus/extension-webhook@2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-BtnVIq3su38vgKlBJCQFon5qZQ9bK75HWqPfQlh9TedBOWeBMHIXRDVfcgFQk/9lpaG0SY5yt8Ibn8SBb2NevQ==}
+  /@hocuspocus/extension-webhook@2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-ZCz+bnpbkQygL3v7uhwmX2pFk7DHJUdIqbXqNRpyL8Xl529IXg4B6RiVV2tR3vZjLV+Fk4WU3t1tIiNC9CgYeQ==}
     peerDependencies:
       yjs: ^13.6.4
     dependencies:
-      '@hocuspocus/common': 2.7.1
-      '@hocuspocus/server': 2.7.1(y-protocols@1.0.6)(yjs@13.6.8)
-      '@hocuspocus/transformer': 2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(yjs@13.6.8)
-      axios: 1.6.1
+      '@hocuspocus/common': 2.8.0
+      '@hocuspocus/server': 2.8.0(y-protocols@1.0.6)(yjs@13.6.8)
+      '@hocuspocus/transformer': 2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(yjs@13.6.8)
+      axios: 1.6.2
       yjs: 13.6.8
     transitivePeerDependencies:
       - '@tiptap/pm'
@@ -350,13 +350,13 @@ packages:
       - y-protocols
     dev: true
 
-  /@hocuspocus/provider@2.7.1(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-C+NcY1fcOR/su8kkr1wgd75euKMcC4+yBL/x8G8Oxz18zb5uFrNsAnTvaBa6J/iQazWQZdyrDzUhwLOT0id37Q==}
+  /@hocuspocus/provider@2.8.0(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-NJHrHfZwuk26+zi7xDHWxWyrnAOr9OWJqs6vVRRNPRncxulDP2tibiTXjsmrNMYiGFhAma9bvSzG9SDLo9P4EA==}
     peerDependencies:
       y-protocols: ^1.0.5
       yjs: ^13.6.4
     dependencies:
-      '@hocuspocus/common': 2.7.1
+      '@hocuspocus/common': 2.8.0
       '@lifeomic/attempt': 3.0.3
       lib0: 0.2.87
       ws: 8.14.2
@@ -367,13 +367,13 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@hocuspocus/server@2.7.1(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-o+LvPZhw9heNkOhkQAa1HdhL2ONwxgpozupekXoPC1Gb5kA+8rZKuGJvPTSI74a6gfhfXvRs7ROvTIVAmQI49g==}
+  /@hocuspocus/server@2.8.0(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-KdlrwSyEIjw3Ut6qr+/+VdRQ+pihL4+StJrrYivtWDmjFoeNGxp41Nnd2S18OaqMEOu7SXovcq5YSoyCaCTYcQ==}
     peerDependencies:
       y-protocols: ^1.0.5
       yjs: ^13.6.4
     dependencies:
-      '@hocuspocus/common': 2.7.1
+      '@hocuspocus/common': 2.8.0
       async-lock: 1.4.0
       kleur: 4.1.5
       lib0: 0.2.87
@@ -385,8 +385,8 @@ packages:
       - bufferutil
       - utf-8-validate
 
-  /@hocuspocus/transformer@2.7.1(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1)(yjs@13.6.8):
-    resolution: {integrity: sha512-JUpqTDMTUPOVgyzZI4EH8jMwDdbKwO+1d3fuXLddYczl9/hi4/ydw0UikvhfYhQl2GPj5P0kNEDt+W9zbM021g==}
+  /@hocuspocus/transformer@2.8.0(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20)(yjs@13.6.8):
+    resolution: {integrity: sha512-tEQeemfgVZLqIOx4OV9Wx64XVE/9Pc93lpDouhuGbBNv3su1IIay7A3rxDbTLXZJ+Pa9nG/EoFKrf+KJISSeHA==}
     peerDependencies:
       '@tiptap/pm': ^2.0.3
       y-prosemirror: ^1.0.15
@@ -395,7 +395,7 @@ packages:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
       '@tiptap/pm': 2.1.12
       '@tiptap/starter-kit': 2.1.12(@tiptap/pm@2.1.12)
-      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
+      y-prosemirror: 1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
       yjs: 13.6.8
     dev: true
 
@@ -423,15 +423,15 @@ packages:
     resolution: {integrity: sha512-GlM2AbzrErd/TmLL3E8hAHmb5Q7VhDJp35vIbyPVA5Rz55LZuRr8pwL3qrwwkVNo05gMX1J44gURKb4MHQZo7w==}
     dev: false
 
-  /@mantine/core@7.2.1(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-vB5nMip/8fm+/9V49C856AGWEGocNzks6+KO/ocz4EKgd665F663Bs8x6cvop2onbZyVxhX/5Zge93ndX4UNFA==}
+  /@mantine/core@7.2.2(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-cVGmLjYyKIzjn0LRwamj71O4HT43qCxPGAzMZqkMYGOako7xwBLYQNe7HjL/J0FXJDyfX8OdMylVhgsePWYbng==}
     peerDependencies:
-      '@mantine/hooks': 7.2.1
+      '@mantine/hooks': 7.2.2
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
       '@floating-ui/react': 0.24.8(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.2.1(react@18.2.0)
+      '@mantine/hooks': 7.2.2(react@18.2.0)
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -443,8 +443,8 @@ packages:
       - '@types/react'
     dev: false
 
-  /@mantine/form@7.2.1(react@18.2.0):
-    resolution: {integrity: sha512-Klh8QIz+uc2U3AR6d3R4/Eugvul4XbrSGx1+Dq8PtkepttWG7Zxv349aoR1iPBsDq543nLWqhsxhWpHphmD2uA==}
+  /@mantine/form@7.2.2(react@18.2.0):
+    resolution: {integrity: sha512-Tzux6WbUliK6id1I7lV8tmu6je0WFrJLPDg+0xVyW7Qk/zmju837kj7SSfvNcJa51dKAtYxf3FgqTRy6ap9QEA==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
@@ -453,51 +453,51 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@mantine/hooks@7.2.1(react@18.2.0):
-    resolution: {integrity: sha512-v7GKjVQ6SV6dQ+hrs6HDHB50UB+ZXS5hhGp1bo2k6QGF3wcndws+eghCFO5hjKIVSLYm2YoaZxwKiQmjsZBXfQ==}
+  /@mantine/hooks@7.2.2(react@18.2.0):
+    resolution: {integrity: sha512-7CFSVP2aQHrBwLLAVf0q5dgj+6QTZmhLTNcuc3pE1du+HLFUdyVS6vvQC6kieZXxOd6UzwFGBlN4G+aDx95XeA==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@mantine/notifications@7.2.1(@mantine/core@7.2.1)(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-h19WGE7utzqTrn9js/ZJSlnPpcIAZlt6W8SuG3AybXnFP591We9ZCEUUSdwpeJsZM/Put+fJO27j8rh2H9pN9A==}
+  /@mantine/notifications@7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2MQ0jJi9HOspJOAq0sfE5QvacZytYoLB8k0GwnubnFilSACbpDYeoQXZWmKX0joYhHtKR15muTnF+P1s9kmr3Q==}
     peerDependencies:
-      '@mantine/core': 7.2.1
-      '@mantine/hooks': 7.2.1
+      '@mantine/core': 7.2.2
+      '@mantine/hooks': 7.2.2
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@mantine/core': 7.2.1(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.2.1(react@18.2.0)
-      '@mantine/store': 7.2.1(react@18.2.0)
+      '@mantine/core': 7.2.2(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks': 7.2.2(react@18.2.0)
+      '@mantine/store': 7.2.2(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@mantine/store@7.2.1(react@18.2.0):
-    resolution: {integrity: sha512-BoWI+gmwZUEIdjXhpIfTNhKa+yiPGUbCubb5QbATQVWztLU/cyyv3HpGHKS8EUe0HS26MIAcTBK+5pHZduTOIA==}
+  /@mantine/store@7.2.2(react@18.2.0):
+    resolution: {integrity: sha512-j8vR8whB332pGI8OXkM2/3rdh4LJxELJQTG+rTsCCd3VQuEJiRTQDKVaOvp9ONja3GU5b1Tk3zhKOrkpgxTJBA==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@mantine/tiptap@7.2.1(@mantine/core@7.2.1)(@mantine/hooks@7.2.1)(@tabler/icons-react@2.40.0)(@tiptap/extension-link@2.1.12)(@tiptap/react@2.1.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-YJ4D/jU7nyM+RlTu+b+EsdA5XHH7Yxy8DhOzIYnDk+pLE+H/9muvYu3ADAsalnBJwDleOPxylMpVNoQJo14/6Q==}
+  /@mantine/tiptap@7.2.2(@mantine/core@7.2.2)(@mantine/hooks@7.2.2)(@tabler/icons-react@2.40.0)(@tiptap/extension-link@2.1.12)(@tiptap/react@2.1.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-sL62vp97D4ChWXdzGVerK0XY5N7b2XvOaPOKYQRG0rJ8EvaDs9RfL/DU42/HPnkSnKLi/LmVkHWPJJGViKTCrg==}
     peerDependencies:
-      '@mantine/core': 7.2.1
-      '@mantine/hooks': 7.2.1
+      '@mantine/core': 7.2.2
+      '@mantine/hooks': 7.2.2
       '@tabler/icons-react': ^2.29.0
       '@tiptap/extension-link': ^2.0.4
       '@tiptap/react': ^2.0.4
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@mantine/core': 7.2.1(@mantine/hooks@7.2.1)(react-dom@18.2.0)(react@18.2.0)
-      '@mantine/hooks': 7.2.1(react@18.2.0)
+      '@mantine/core': 7.2.2(@mantine/hooks@7.2.2)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks': 7.2.2(react@18.2.0)
       '@tabler/icons-react': 2.40.0(react@18.2.0)
       '@tiptap/extension-link': 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
       '@tiptap/react': 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)(react-dom@18.2.0)(react@18.2.0)
@@ -744,17 +744,17 @@ packages:
   /@supabase/functions-js@2.1.5:
     resolution: {integrity: sha512-BNzC5XhCzzCaggJ8s53DP+WeHHGT/NfTsx2wUSSGKR2/ikLFQTBCDzMvGz/PxYMqRko/LwncQtKXGOYp1PkPaw==}
     dependencies:
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
     dev: false
 
   /@supabase/gotrue-js@2.57.0:
     resolution: {integrity: sha512-/CcAW40aPKgp9/w9WgXVUQFg1AOdvFR687ONOMjASPBuC6FsNbKlcXp4pc+rwKNtxyxDkBbR+x7zj/8g00r/Og==}
     dependencies:
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
     dev: false
 
-  /@supabase/node-fetch@2.6.14:
-    resolution: {integrity: sha512-w/Tsd22e/5fAeoxqQ4P2MX6EyF+iM6rc9kmlMVFkHuG0rAltt2TLhFbDJfemnHbtvnazWaRfy5KnFU/SYT37dQ==}
+  /@supabase/node-fetch@2.6.15:
+    resolution: {integrity: sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==}
     engines: {node: 4.x || >=6.0.0}
     dependencies:
       whatwg-url: 5.0.0
@@ -763,13 +763,13 @@ packages:
   /@supabase/postgrest-js@1.8.5:
     resolution: {integrity: sha512-XvoqN5e5Z4TsQOYWLQYLW0HIlZtFSzwAcwiuToaSBSTpLOGCg4NaZ7au5GfBzCQJZdZPY5vk5FvwthfDsQK/Jw==}
     dependencies:
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
     dev: false
 
   /@supabase/realtime-js@2.8.4:
     resolution: {integrity: sha512-5C9slLTGikHnYmAnIBOaPogAgbcNY68vnIyE6GpqIKjHElVb6LIi4clwNcjHSj4z6szuvvzj8T/+ePEgGEGekw==}
     dependencies:
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
       '@types/phoenix': 1.6.4
       '@types/websocket': 1.0.9
       websocket: 1.0.34
@@ -780,7 +780,7 @@ packages:
   /@supabase/storage-js@2.5.4:
     resolution: {integrity: sha512-yspHD19I9uQUgfTh0J94+/r/g6hnhdQmw6Y7OWqr/EbnL6uvicGV1i1UDkkmeUHqfF9Mbt2sLtuxRycYyKv2ew==}
     dependencies:
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
     dev: false
 
   /@supabase/supabase-js@2.38.4:
@@ -788,7 +788,7 @@ packages:
     dependencies:
       '@supabase/functions-js': 2.1.5
       '@supabase/gotrue-js': 2.57.0
-      '@supabase/node-fetch': 2.6.14
+      '@supabase/node-fetch': 2.6.15
       '@supabase/postgrest-js': 1.8.5
       '@supabase/realtime-js': 2.8.4
       '@supabase/storage-js': 2.5.4
@@ -871,17 +871,17 @@ packages:
     dependencies:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
 
-  /@tiptap/extension-collaboration-cursor@2.1.12(@tiptap/core@2.1.12)(y-prosemirror@1.2.1):
+  /@tiptap/extension-collaboration-cursor@2.1.12(@tiptap/core@2.1.12)(y-prosemirror@1.0.20):
     resolution: {integrity: sha512-1hxo8bJWOvNccU7+yQSeUNU/sXPMXJ645WdXU5bylD4q/Ph/7u3gFxPPLu+j8WiLisBbj31saPk/DaOukIFTVg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       y-prosemirror: 1.0.20
     dependencies:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
-      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
+      y-prosemirror: 1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
     dev: false
 
-  /@tiptap/extension-collaboration@2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)(y-prosemirror@1.2.1):
+  /@tiptap/extension-collaboration@2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)(y-prosemirror@1.0.20):
     resolution: {integrity: sha512-U/2Vo1RyFIhi2oMW371wO145PU8mjQp7shCDdio/hNF+GasaNN9mrqkMBj8JBhH7UOTJcEqLPP4df1nEDo1BBQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
@@ -890,7 +890,7 @@ packages:
     dependencies:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
       '@tiptap/pm': 2.1.12
-      y-prosemirror: 1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
+      y-prosemirror: 1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8)
     dev: false
 
   /@tiptap/extension-document@2.1.12(@tiptap/core@2.1.12):
@@ -984,7 +984,7 @@ packages:
     dependencies:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
       '@tiptap/pm': 2.1.12
-      linkifyjs: 4.1.1
+      linkifyjs: 4.1.2
     dev: false
 
   /@tiptap/extension-list-item@2.1.12(@tiptap/core@2.1.12):
@@ -1073,7 +1073,7 @@ packages:
       prosemirror-dropcursor: 1.8.1
       prosemirror-gapcursor: 1.3.2
       prosemirror-history: 1.3.2
-      prosemirror-inputrules: 1.2.1
+      prosemirror-inputrules: 1.3.0
       prosemirror-keymap: 1.2.2
       prosemirror-markdown: 1.11.2
       prosemirror-menu: 1.2.4
@@ -1145,8 +1145,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node@20.9.0:
-    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
+  /@types/node@20.9.1:
+    resolution: {integrity: sha512-HhmzZh5LSJNS5O8jQKpJ/3ZcrrlG6L70hpGqMIAoM9YVD0YBRNWYsfwcXq8VnSjlNpCpgLzMXdiPo+dxcvSmiA==}
     dependencies:
       undici-types: 5.26.5
     dev: false
@@ -1187,7 +1187,7 @@ packages:
   /@types/websocket@1.0.9:
     resolution: {integrity: sha512-xrMBdqdKdlE+7L9Wg2PQblIkZGSgiMlEoP6UAaYKMHbbxqCJ6PV/pTZ2RcMcSSERurU2TtGbmO4lqpFOJd01ww==}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.9.1
     dev: false
 
   /@typescript-eslint/parser@6.11.0(eslint@8.53.0)(typescript@5.2.2):
@@ -1517,8 +1517,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios@1.6.1:
-    resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
+  /axios@1.6.2:
+    resolution: {integrity: sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==}
     dependencies:
       follow-redirects: 1.15.3
       form-data: 4.0.0
@@ -1612,7 +1612,7 @@ packages:
     engines: {node: '>=6.14.2'}
     requiresBuild: true
     dependencies:
-      node-gyp-build: 4.6.1
+      node-gyp-build: 4.7.0
     dev: false
 
   /busboy@1.6.0:
@@ -1672,8 +1672,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001561:
-    resolution: {integrity: sha512-NTt0DNoKe958Q0BE0j0c1V9jbUzhBxHIEJy7asmGrpE0yG63KTV7PLHPnK2E1O9RsQrQ081I3NLuXGS6zht3cw==}
+  /caniuse-lite@1.0.30001563:
+    resolution: {integrity: sha512-na2WUmOxnwIZtwnFI2CZ/3er0wdNzU7hN+cPYz/z2ajHThnkWjNBOpEPP4n+4r2WPM847JaMotaJE3bnfzjyKw==}
     dev: false
 
   /case-anything@2.1.13:
@@ -2363,7 +2363,7 @@ packages:
       glob-parent: 6.0.2
       globals: 13.23.0
       graphemer: 1.4.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       imurmurhash: 0.1.4
       is-glob: 4.0.3
       is-path-inside: 3.0.3
@@ -2744,7 +2744,7 @@ packages:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
@@ -2882,8 +2882,8 @@ packages:
     resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
     dev: true
 
-  /ignore@5.2.4:
-    resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
+  /ignore@5.3.0:
+    resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
     engines: {node: '>= 4'}
     dev: true
 
@@ -3361,8 +3361,8 @@ packages:
     dependencies:
       uc.micro: 1.0.6
 
-  /linkifyjs@4.1.1:
-    resolution: {integrity: sha512-zFN/CTVmbcVef+WaDXT63dNzzkfRBKT1j464NJQkV7iSgJU0sLBus9W0HBwnXK13/hf168pbrx/V/bjEHOXNHA==}
+  /linkifyjs@4.1.2:
+    resolution: {integrity: sha512-1elJrH8MwUgr77Rgmx4JgB/nBgISYVoGossH6pAfCeHG+07TblTn6RWKx0MKozEMJU6NCFYHRih9M8ZtV3YZ+Q==}
     dev: false
 
   /locate-path@6.0.0:
@@ -3606,8 +3606,8 @@ packages:
     engines: {node: '>= 0.6'}
     requiresBuild: true
 
-  /next-auth@4.24.4(next@14.0.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-5DGffi+OpkbU62vPQIJ1z+hFnmow+ec5Qrn9m6eoglIO51m0DlrmLxBduZEwKAYDEg9k2joi1yelgmq1vqK3aQ==}
+  /next-auth@4.24.5(next@14.0.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3RafV3XbfIKk6rF6GlLE4/KxjTcuMCifqrmD+98ejFq73SRoj2rmzoca8u764977lH/Q7jo6Xu6yM+Re1Mz/Og==}
     peerDependencies:
       next: ^12.2.5 || ^13 || ^14
       nodemailer: ^6.6.5
@@ -3624,8 +3624,8 @@ packages:
       next: 14.0.1(react-dom@18.2.0)(react@18.2.0)
       oauth: 0.9.15
       openid-client: 5.6.1
-      preact: 10.18.2
-      preact-render-to-string: 5.2.6(preact@10.18.2)
+      preact: 10.19.2
+      preact-render-to-string: 5.2.6(preact@10.19.2)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       uuid: 8.3.2
@@ -3653,7 +3653,7 @@ packages:
       '@next/env': 14.0.1
       '@swc/helpers': 0.5.2
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001561
+      caniuse-lite: 1.0.30001563
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3700,8 +3700,8 @@ packages:
     dev: false
     optional: true
 
-  /node-gyp-build@4.6.1:
-    resolution: {integrity: sha512-24vnklJmyRS8ViBNI8KbtK/r/DmXQMRiOMXTNz2nrTnAYUwjmEEbnnpB/+kt+yWRv73bPsSPRFddrcIbAxSiMQ==}
+  /node-gyp-build@4.7.0:
+    resolution: {integrity: sha512-PbZERfeFdrHQOOXiAKOY0VPbykZy90ndPKk0d+CFDegTKmWp1VgOTz2xACVbr1BjCWxrQp68CXtvNsveFhqDJg==}
     hasBin: true
     dev: false
 
@@ -4012,8 +4012,8 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /postcss-preset-mantine@1.9.1(postcss@8.4.31):
-    resolution: {integrity: sha512-7wyKKsxXvHaAxX9//9FS9tSEWaG96KIXl3/cRlaNf3C/V08JI0gvDV6UifloxPpseZQrPMsuC95/+gPBaTJuWw==}
+  /postcss-preset-mantine@1.11.0(postcss@8.4.31):
+    resolution: {integrity: sha512-drhCJAd8Rrn5ulRX5cP6DM6nMLrACAsBU73MfXNI3c77p4dodO36KcfEMY0WqaQkd/E2oODkTm7gVYOzjs45Gw==}
     peerDependencies:
       postcss: '>=8.0.0'
     dependencies:
@@ -4047,17 +4047,17 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
-  /preact-render-to-string@5.2.6(preact@10.18.2):
+  /preact-render-to-string@5.2.6(preact@10.19.2):
     resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}
     peerDependencies:
       preact: '>=10'
     dependencies:
-      preact: 10.18.2
+      preact: 10.19.2
       pretty-format: 3.8.0
     dev: false
 
-  /preact@10.18.2:
-    resolution: {integrity: sha512-X/K43vocUHDg0XhWVmTTMbec4LT/iBMh+csCEqJk+pJqegaXsvjdqN80ZZ3L+93azWCnWCZ+WGwYb8SplxeNjA==}
+  /preact@10.19.2:
+    resolution: {integrity: sha512-UA9DX/OJwv6YwP9Vn7Ti/vF80XL+YA5H2l7BpCtUr3ya8LWHFzpiO5R+N7dN16ujpIxhekRFuOOF82bXX7K/lg==}
     dev: false
 
   /prelude-ls@1.2.1:
@@ -4065,8 +4065,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.1.0:
+    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -4143,8 +4143,8 @@ packages:
       prosemirror-view: 1.32.4
       rope-sequence: 1.3.4
 
-  /prosemirror-inputrules@1.2.1:
-    resolution: {integrity: sha512-3LrWJX1+ULRh5SZvbIQlwZafOXqp1XuV21MGBu/i5xsztd+9VD15x6OtN6mdqSFI7/8Y77gYUbQ6vwwJ4mr6QQ==}
+  /prosemirror-inputrules@1.3.0:
+    resolution: {integrity: sha512-z1GRP2vhh5CihYMQYsJSa1cOwXb3SYxALXOIfAkX8nZserARtl9LiL+CEl+T+OFIsXc3mJIHKhbsmRzC0HDAXA==}
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
@@ -5162,7 +5162,7 @@ packages:
     engines: {node: '>=6.14.2'}
     requiresBuild: true
     dependencies:
-      node-gyp-build: 4.6.1
+      node-gyp-build: 4.7.0
     dev: false
 
   /util-deprecate@1.0.2:
@@ -5356,14 +5356,14 @@ packages:
     dev: false
     optional: true
 
-  /y-prosemirror@1.2.1(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8):
-    resolution: {integrity: sha512-czMBfB1eL2awqmOSxQM8cS/fsUOGE6fjvyPLInrh4crPxFiw67wDpwIW+EGBYKRa04sYbS0ScGj7ZgvWuDrmBQ==}
+  /y-prosemirror@1.0.20(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.4)(y-protocols@1.0.6)(yjs@13.6.8):
+    resolution: {integrity: sha512-LVMtu3qWo0emeYiP+0jgNcvZkqhzE/otOoro+87q0iVKxy/sMKuiJZnokfJdR4cn9qKx0Un5fIxXqbAlR2bFkA==}
     peerDependencies:
       prosemirror-model: ^1.7.1
       prosemirror-state: ^1.2.3
       prosemirror-view: ^1.9.10
       y-protocols: ^1.0.1
-      yjs: ^13.5.38
+      yjs: ^13.3.2
     dependencies:
       lib0: 0.2.87
       prosemirror-model: 1.19.3
@@ -5381,21 +5381,23 @@ packages:
       lib0: 0.2.87
       yjs: 13.6.8
 
-  /y-webrtc@10.2.5(yjs@13.6.8):
-    resolution: {integrity: sha512-ZyBNvTI5L28sQ2PQI0T/JvyWgvuTq05L21vGkIlcvNLNSJqAaLCBJRe3FHEqXoaogqWmRcEAKGfII4ErNXMnNw==}
+  /y-webrtc@10.2.6(yjs@13.6.8):
+    resolution: {integrity: sha512-1kZ4YYwksFZi8+l8mTebVX9vW6Q5MnqxMkvNU700X5dBE38usurt/JgeXSIQRpK3NwUYYb9y63Jn9FMpMH6/vA==}
     engines: {node: '>=12'}
     hasBin: true
+    peerDependencies:
+      yjs: ^13.6.8
     dependencies:
       lib0: 0.2.87
       simple-peer: 9.11.1
       y-protocols: 1.0.6(yjs@13.6.8)
+      yjs: 13.6.8
     optionalDependencies:
-      ws: 7.5.9
+      ws: 8.14.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
-      - yjs
     dev: false
 
   /y-websocket@1.5.0(yjs@13.6.8):
