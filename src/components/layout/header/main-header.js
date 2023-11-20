@@ -11,6 +11,8 @@ import { IconHeart } from "@tabler/icons-react";
 import { IconHeartFilled } from "@tabler/icons-react";
 import { documentsApi } from "@/api";
 
+import classes from "./main-header.module.css";
+
 export default function MainHeader() {
   const dispatch = useDispatch();
   const { desktopSiderbarOpened, mobileSiderbarOpened } = useSelector(
@@ -101,7 +103,7 @@ export default function MainHeader() {
         <Breadcrumbs>
           {!!activeFolder &&
             folderPath?.map((folder, index) => (
-              <Link href={`/folder/${folder.id}`} key={index}>
+              <Link href={`/folder/${folder.id}`} key={index} className={classes.link}>
                 {folder.name.trim() || "Untitled"}
               </Link>
             ))}
@@ -113,6 +115,7 @@ export default function MainHeader() {
                 href={`/${item.type === "document" ? "doc" : "folder"}/${
                   item.id
                 }`}
+                className={classes.link}
               >
                 {(item.type === "document"
                   ? item.title.trim()

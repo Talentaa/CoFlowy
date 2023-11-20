@@ -8,10 +8,11 @@ import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { createSelector } from "@reduxjs/toolkit";
 import { Flex, Loader, Text, Skeleton } from "@mantine/core";
 import dynamic from "next/dynamic";
+import Loading from "@/components/ui/loading";
 
 const DocumentEditor = dynamic(() => import("@/components/editor/editor"), {
   ssr: false,
-  loading: () => <h1>Loading 2</h1>,
+  loading: () => <Loading />,
 });
 
 const selectDocument = createSelector(

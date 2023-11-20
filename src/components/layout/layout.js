@@ -1,4 +1,4 @@
-import { AppShell } from "@mantine/core";
+import { AppShell, Grid } from "@mantine/core";
 import MainSidebar from "./sidebar/main-sidebar";
 import MainHeader from "./header/main-header";
 
@@ -24,10 +24,10 @@ export default function Layout({ children }) {
   const realtimeChannelRef = useRef(null);
 
   useEffect(() => {
-    if(!user && router.route !== "/doc/[docId]") {
-      router.push("/auth")
+    if (!user && router.route !== "/doc/[docId]") {
+      router.push("/auth");
     }
-  }, [user, router])
+  }, [user, router]);
 
   useEffect(() => {
     if (user) {

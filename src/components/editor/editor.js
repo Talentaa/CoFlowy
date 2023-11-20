@@ -10,6 +10,7 @@ import Collaboration from "@tiptap/extension-collaboration";
 import CollaborationCursor from "@tiptap/extension-collaboration-cursor";
 import { RichTextEditor } from "@mantine/tiptap";
 import StarterKit from "@tiptap/starter-kit";
+import Loading from "../ui/loading";
 
 function getRandomName() {
   const NAMES = ["Anonymous", "Toad", "Yoshi", "Luma", "Boo"];
@@ -93,7 +94,7 @@ export default function DocumentEditor(props) {
           user: userCursor,
         }),
       ],
-      editable
+      editable,
     },
     [documentId, editable, remoteProvider]
   );
@@ -103,17 +104,38 @@ export default function DocumentEditor(props) {
 
   return isSynced ? (
     <>
-      {/* <EditorContent editor={titleEditor} spellCheck="false" /> */}
       <RichTextEditor editor={contentEditor} spellCheck="false">
+        <RichTextEditor.Toolbar sticky stickyOffset={60}>
+      <RichTextEditor.ControlsGroup>
+          <RichTextEditor.Bold />
+          <RichTextEditor.Italic />
+          <RichTextEditor.Underline />
+          <RichTextEditor.Strikethrough />
+          <RichTextEditor.ClearFormatting />
+          <RichTextEditor.Code />
+        </RichTextEditor.ControlsGroup>
+
+        <RichTextEditor.ControlsGroup>
+          <RichTextEditor.H1 />
+          <RichTextEditor.H2 />
+          <RichTextEditor.H3 />
+          <RichTextEditor.H4 />
+        </RichTextEditor.ControlsGroup>
+
+        <RichTextEditor.ControlsGroup>
+          <RichTextEditor.Blockquote />
+          <RichTextEditor.Hr />
+          <RichTextEditor.BulletList />
+          <RichTextEditor.OrderedList />
+        </RichTextEditor.ControlsGroup>
+
+      </RichTextEditor.Toolbar>
         <RichTextEditor.Content />
       </RichTextEditor>
     </>
   ) : (
     <>
-      <div>Loading editor</div>
-      <RichTextEditor editor={contentEditor} spellCheck="false">
-        <RichTextEditor.Content />
-      </RichTextEditor>
+      <Loading />
     </>
   );
 }

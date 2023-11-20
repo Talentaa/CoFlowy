@@ -1,4 +1,5 @@
 import CopyTextButton from "@/components/ui/copy-text-button";
+import Loading from "@/components/ui/loading";
 import {
   ActionIcon,
   Button,
@@ -195,7 +196,7 @@ export default function ShareDocumentButton(props) {
         radius="md"
       >
         {loading ? (
-          <div>Loading</div>
+          <Loading />
         ) : !!error ? (
           <div>An error occurred: {error} </div>
         ) : inherited ? (
