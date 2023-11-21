@@ -51,7 +51,7 @@ export default function MainSidebar() {
         <div className={classes.items}>
           <SidebarItem title="Home" icon={IconHome} href="/home" />
           <SidebarItem title="Shares" icon={IconShare} href="/shares" />
-          <SidebarItem title="Help" icon={IconHelp} href="/help" />
+          <SidebarItem title="Likes" icon={IconHelp} href="/likes" />
         </div>
       </div>
 
