@@ -17,10 +17,10 @@ export default function Likes() {
   return (
     <Stack justify="flex-start">
       <Group>
-        <Text fw={700}>Documents</Text>
+        <Text fw={700}>Likes</Text>
       </Group>
       <Group justify="space-between">
-        <Text size="xs">{documents?.length} likes</Text>
+        <Text size="xs">{documents?.length} documents</Text>
         <ActionIcon
           variant="subtle"
           color="gray"
