@@ -46,16 +46,16 @@ export default function Home() {
     createPagesBrowserClient()
       .from("documents_shared_with_user")
       .select("*")
-      .then(({ data, error }) => {
-        if (data) {
-          setSharedWithMeDocuments(data);
-          console.log(data);
-        } else {
-          console.error(error);
-          setError(error.message);
-        }
-        setIsLoading(false);
-      });
+    .then(({ data, error }) => {
+      // TODO This doesn't work
+      if (data) {
+        setSharedWithMeDocuments(data);
+      } else {
+        console.error(error);
+        setError(error.message);
+      }
+      setIsLoading(false);
+    });
   }, []);
 
   return (
@@ -86,7 +86,9 @@ export default function Home() {
                 router.push(`/doc/${document.id}`);
               }}
             >
-              <Table.Td><IconFile /></Table.Td>
+              <Table.Td>
+                <IconFile />
+              </Table.Td>
               <Table.Td>{document.title || "Untitled"}</Table.Td>
               <Table.Td>{document.share_created_at}</Table.Td>
               <Table.Td>{document.public ? "Public" : "Private"}</Table.Td>

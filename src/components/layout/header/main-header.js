@@ -12,6 +12,8 @@ import { IconHeartFilled } from "@tabler/icons-react";
 import { documentsApi } from "@/api";
 
 import classes from "./main-header.module.css";
+import { IconLayoutSidebarLeftExpand } from "@tabler/icons-react";
+import { IconLayoutSidebarLeftExpandFilled } from "@tabler/icons-react";
 
 export default function MainHeader() {
   const dispatch = useDispatch();
@@ -34,8 +36,8 @@ export default function MainHeader() {
     folderId
       ? state.folders.folders.find((f) => f.id === folderId)
       : docId
-      ? state.documents.documents.find((d) => d.id === docId)?.folder_id
-      : null
+        ? state.documents.documents.find((d) => d.id === docId)?.folder_id
+        : null
   );
 
   const folderPath = useMemo(() => {
@@ -84,14 +86,18 @@ export default function MainHeader() {
   return (
     <Group h="100%" px="md" justify="space-between">
       <Group>
-        <Burger
-          opened={desktopSiderbarOpened}
+        <ActionIcon
+          variant="transparent"
           onClick={() => {
             dispatch(toggleDesktopSidebar());
           }}
-          visibleFrom="sm"
-          size="sm"
-        />
+        >
+          {desktopSiderbarOpened ? (
+            <IconLayoutSidebarLeftExpandFilled />
+          ) : (
+            <IconLayoutSidebarLeftExpand />
+          )}
+        </ActionIcon>
         <Burger
           opened={mobileSiderbarOpened}
           onClick={() => {
@@ -103,7 +109,11 @@ export default function MainHeader() {
         <Breadcrumbs>
           {!!activeFolder &&
             folderPath?.map((folder, index) => (
-              <Link href={`/folder/${folder.id}`} key={index} className={classes.link}>
+              <Link
+                href={`/folder/${folder.id}`}
+                key={index}
+                className={classes.link}
+              >
                 {folder.name.trim() || "Untitled"}
               </Link>
             ))}

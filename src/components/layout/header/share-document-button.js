@@ -3,17 +3,29 @@ import Loading from "@/components/ui/loading";
 import {
   ActionIcon,
   Button,
+  Flex,
+  Group,
   Input,
+  Menu,
   Modal,
   Select,
   Space,
+  Stack,
   Text,
   TextInput,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { useSession } from "@supabase/auth-helpers-react";
+import { IconX } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
+import { IconChevronRight } from "@tabler/icons-react";
+import { IconArrowUp } from "@tabler/icons-react";
+import { IconSquareCheck } from "@tabler/icons-react";
 import { IconLink } from "@tabler/icons-react";
+import { IconUser } from "@tabler/icons-react";
+import { IconCross } from "@tabler/icons-react";
+import { IconCheck } from "@tabler/icons-react";
 import { IconShare3 } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -105,6 +117,7 @@ export default function ShareDocumentButton(props) {
     if (!userQuery) {
       return;
     }
+    console.log(userQuery);
 
     const { data: foundUser, error } = await supabase
       .from("profiles")
@@ -228,8 +241,69 @@ export default function ShareDocumentButton(props) {
             <Text>Add users</Text>
             <TextInput
               placeholder="Username or email"
-              leftSection={<IconLink />}
+              leftSection={<IconUser />}
+              rightSectionWidth={42}
+              value={userQuery}
+              onChange={(e) => setUserQuery(e.target.value)}
+              rightSection={
+                <Button radius="md" onClick={handleAddUser}>
+                  Add
+                </Button>
+              }
             />
+            <Stack>
+              {Object.entries(shareSettings?.user_permissions || [])
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([user_id, permission]) => (
+                  <Group justify="space-between" key={user_id}>
+                    <Text>{user_id}</Text>
+                    <Menu shadow="md">
+                      <Menu.Target>
+                        <Button
+                          variant="subtle"
+                          rightSection={<IconChevronRight />}
+                        >
+                          {permission === "edit" ? "Can edit" : "Can read"}
+                        </Button>
+                      </Menu.Target>
+
+                      <Menu.Dropdown>
+                        <Menu.Item
+                          rightSection={
+                            permission === "read" ? <IconCheck /> : null
+                          }
+                          onClick={() => {
+                            setUserPermission(user_id, "read");
+                          }}
+                        >
+                          Can read
+                        </Menu.Item>
+
+                        <Menu.Item
+                          rightSection={
+                            permission === "edit" ? <IconCheck /> : null
+                          }
+                          onClick={() => {
+                            setUserPermission(user_id, "edit");
+                          }}
+                        >
+                          Can edit
+                        </Menu.Item>
+
+                        <Menu.Item
+                          rightSection={<IconX />}
+                          color="red"
+                          onClick={() => {
+                            setUserPermission(user_id, "none");
+                          }}
+                        >
+                          Remove user
+                        </Menu.Item>
+                      </Menu.Dropdown>
+                    </Menu>
+                  </Group>
+                ))}
+            </Stack>
           </>
         )}
       </Modal>

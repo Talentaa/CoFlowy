@@ -79,7 +79,7 @@ export default function Document() {
           style={{ width: "100%", height: "100%" }}
         >
           {permission === "loading" ? (
-            <Loader color="blue" />
+            <Loading />
           ) : (
             <Text>No permission to access this document</Text>
           )}
