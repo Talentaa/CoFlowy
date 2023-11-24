@@ -75,7 +75,6 @@ export default function Folder() {
   };
 
   return (
-    <>
       <Stack justify="flex-start">
         <Group>
           <Text fw={700}>Folders</Text>
@@ -167,7 +166,6 @@ export default function Folder() {
           </Flex>
         </Collapse>
       </Stack>
-    </>
   );
 }
 

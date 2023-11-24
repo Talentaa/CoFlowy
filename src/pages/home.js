@@ -3,9 +3,24 @@ import { useUser } from "@supabase/auth-helpers-react";
 import { useSelector } from "react-redux";
 import { useState, useMemo, useEffect } from "react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
+import {
+  ActionIcon,
+  Collapse,
+  Flex,
+  Group,
+  Stack,
+  Text,
+  Divider
+} from "@mantine/core";
+import { IconSwitchVertical } from "@tabler/icons-react";
+import DocumentFolderCard from "@/components/ui/document-folder-card";
+import { useDisclosure } from "@mantine/hooks";
 
 export default function Home() {
   const user = useUser();
+
+  const [foldersOpened, { toggle: toggleFolders }] = useDisclosure(true);
+  const [documentsOpened, { toggle: toggleDocuments }] = useDisclosure(true);
 
   const {
     documents,
@@ -68,7 +83,79 @@ export default function Home() {
     }
   }, [documents]);
 
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Stack justify="flex-start">
+        <Group>
+          <Text fw={700}>Recent Folders</Text>
+        </Group>
+        <Group justify="space-between">
+          <Text size="xs">{recentFolders.length} folders</Text>
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            radius="xl"
+            size="sm"
+            onClick={toggleFolders}
+          >
+            <IconSwitchVertical />
+          </ActionIcon>
+        </Group>
+        <Collapse in={foldersOpened}>
+          <Flex
+            gap="md"
+            justify="flex-start"
+            align="center"
+            direction="row"
+            wrap="wrap"
+          >
+            {recentFolders?.map((folder) => (
+              <DocumentFolderCard
+                key={folder.id}
+                id={folder.id}
+                name={folder.name}
+                type="folder"
+              />
+            ))}
+          </Flex>
+        </Collapse>
+        <Divider my="sm" />
+        <Group>
+          <Text fw={700}>Recent Documents</Text>
+        </Group>
+        <Group justify="space-between">
+          <Text size="xs">{recentDocuments.length} documents</Text>
+          <ActionIcon
+            variant="subtle"
+            color="gray"
+            radius="xl"
+            size="sm"
+            onClick={toggleDocuments}
+          >
+            <IconSwitchVertical />
+          </ActionIcon>
+        </Group>
+        <Collapse in={documentsOpened}>
+          <Flex
+            gap="md"
+            justify="flex-start"
+            align="center"
+            direction="row"
+            wrap="wrap"
+          >
+            {recentDocuments?.map((document) => (
+              <DocumentFolderCard
+                id={document.id}
+                key={document.id}
+                name={document.title || "Untitled"}
+                type="document"
+              />
+            ))}
+          </Flex>
+        </Collapse>
+      </Stack>
+    </>
+  );
 }
 
 Home.Layout = Layout;
