@@ -1,21 +1,16 @@
 import Layout from "@/components/layout/layout";
-import DocumentFolderCard from "@/components/ui/document-folder-card";
-import {
-  Group,
-  Text,
-  Tooltip,
-  ActionIcon,
-  Flex,
-  Collapse,
-  Divider,
-  Stack,
-  Table,
-} from "@mantine/core";
+import { Group, Text, Divider, Stack, Table } from "@mantine/core";
+import moment from "moment";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { IconFile } from "@tabler/icons-react";
-import { IconSwitchVertical } from "@tabler/icons-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
+function stringifyDate(date) {
+  return `${moment(new Date(date)).format("DD/MM/YYYY")} at ${moment(
+    new Date(date)
+  ).format("HH:mm")}`;
+}
 
 export default function Home() {
   const [sharedByMeDocuments, setSharedByMeDocuments] = useState([]);
@@ -46,16 +41,15 @@ export default function Home() {
     createPagesBrowserClient()
       .from("documents_shared_with_user")
       .select("*")
-    .then(({ data, error }) => {
-      // TODO This doesn't work
-      if (data) {
-        setSharedWithMeDocuments(data);
-      } else {
-        console.error(error);
-        setError(error.message);
-      }
-      setIsLoading(false);
-    });
+      .then(({ data, error }) => {
+        if (data) {
+          setSharedWithMeDocuments(data);
+        } else {
+          console.error(error);
+          setError(error.message);
+        }
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -65,9 +59,6 @@ export default function Home() {
       </Group>
       <Group justify="space-between">
         <Text size="xs">{sharedByMeDocuments.length} documents</Text>
-        <ActionIcon variant="subtle" color="gray" radius="xl" size="sm">
-          <IconSwitchVertical />
-        </ActionIcon>
       </Group>
       <Table highlightOnHover verticalSpacing="lg">
         <Table.Thead>
@@ -90,7 +81,7 @@ export default function Home() {
                 <IconFile />
               </Table.Td>
               <Table.Td>{document.title || "Untitled"}</Table.Td>
-              <Table.Td>{document.share_created_at}</Table.Td>
+              <Table.Td>{stringifyDate(document.share_created_at)}</Table.Td>
               <Table.Td>{document.public ? "Public" : "Private"}</Table.Td>
             </Table.Tr>
           ))}
@@ -100,9 +91,13 @@ export default function Home() {
       <Group>
         <Text fw={700}>Shared With me</Text>
       </Group>
-      <Table>
+      <Group justify="space-between">
+        <Text size="xs">{sharedWithMeDocuments.length} documents</Text>
+      </Group>
+      <Table highlightOnHover verticalSpacing="lg">
         <Table.Thead>
           <Table.Tr>
+            <Table.Th />
             <Table.Th>Title</Table.Th>
             <Table.Th>Shared by</Table.Th>
             <Table.Th>Permission</Table.Th>
@@ -116,6 +111,9 @@ export default function Home() {
                 router.push(`/doc/${document.id}`);
               }}
             >
+              <Table.Td>
+                <IconFile />
+              </Table.Td>
               <Table.Td>{document.title || "Untitled"}</Table.Td>
               <Table.Td>{document.owner_username}</Table.Td>
               <Table.Td>{document.permission}</Table.Td>

@@ -12,8 +12,12 @@ import { IconHeartFilled } from "@tabler/icons-react";
 import { documentsApi } from "@/api";
 
 import classes from "./main-header.module.css";
-import { IconLayoutSidebarLeftExpand } from "@tabler/icons-react";
-import { IconLayoutSidebarLeftExpandFilled } from "@tabler/icons-react";
+import {
+  IconLayoutSidebarLeftExpand,
+  IconLayoutSidebarRightExpand,
+} from "@tabler/icons-react";
+
+
 
 export default function MainHeader() {
   const dispatch = useDispatch();
@@ -93,7 +97,7 @@ export default function MainHeader() {
           }}
         >
           {desktopSiderbarOpened ? (
-            <IconLayoutSidebarLeftExpandFilled />
+            <IconLayoutSidebarRightExpand />
           ) : (
             <IconLayoutSidebarLeftExpand />
           )}
