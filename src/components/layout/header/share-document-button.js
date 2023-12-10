@@ -40,27 +40,27 @@ export default function ShareDocumentButton(props) {
   const session = useSession();
   const supabase = createPagesBrowserClient();
 
-  const { documentInheritedFrom } = useSelector((state) => ({
-    documentInheritedFrom: state.documents.documents.find(
-      (d) => d.id === shareSettings?.document_id
-    ),
-  }));
+  // const { documentInheritedFrom } = useSelector((state) => ({
+  //   documentInheritedFrom: state.documents.documents.find(
+  //     (d) => d.id === shareSettings?.document_id
+  //   ),
+  // }));
 
-  const disableInheritance = async () => {
-    const { error } = await supabase
-      .from("documents")
-      .update({ share_settings: null })
-      .match({ id: documentId })
-      .single();
+  // const disableInheritance = async () => {
+  //   const { error } = await supabase
+  //     .from("documents")
+  //     .update({ share_settings: null })
+  //     .match({ id: documentId })
+  //     .single();
 
-    if (error) {
-      console.error(error);
-      return setError(error.message);
-    }
+  //   if (error) {
+  //     console.error(error);
+  //     return setError(error.message);
+  //   }
 
-    setShareSettings(null);
-    setInherited(false);
-  };
+  //   setShareSettings(null);
+  //   setInherited(false);
+  // };
 
   const updateShareSettings = async (settings) => {
     if (!shareSettings) {
@@ -92,19 +92,19 @@ export default function ShareDocumentButton(props) {
     setShareSettings(share_settings);
   };
 
-  const deleteShareSettings = async () => {
-    const { error } = await supabase
-      .from("shares")
-      .delete()
-      .match({ id: shareSettings.id });
+  // const deleteShareSettings = async () => {
+  //   const { error } = await supabase
+  //     .from("shares")
+  //     .delete()
+  //     .match({ id: shareSettings.id });
 
-    if (error) {
-      console.error(error);
-      return setError(error.message);
-    }
+  //   if (error) {
+  //     console.error(error);
+  //     return setError(error.message);
+  //   }
 
-    setShareSettings(null);
-  };
+  //   setShareSettings(null);
+  // };
 
   const handleAddUser = async () => {
     setAddUserFieldError("");

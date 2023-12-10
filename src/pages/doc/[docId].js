@@ -3,7 +3,6 @@ import { useSession } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { useUser } from "@supabase/auth-helpers-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { createSelector } from "@reduxjs/toolkit";
 import { Flex, Text } from "@mantine/core";
@@ -25,7 +24,7 @@ const selectDocument = createSelector(
 
 export default function Document() {
   const session = useSession();
-  const user = useUser();
+  const user = useSelector((state) => state.user.user);
 
   const router = useRouter();
   const { docId } = router.query;
@@ -61,7 +60,7 @@ export default function Document() {
       {["read", "edit"].includes(permission) ? (
         <DocumentEditor
           documentId={docId}
-          user={{ emial: user?.email }}
+          user={user}
           token={
             session
               ? JSON.stringify({

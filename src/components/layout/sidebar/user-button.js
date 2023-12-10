@@ -1,34 +1,34 @@
 import { UnstyledButton, Group, Avatar, Text, rem, Menu } from "@mantine/core";
 import { IconChevronRight } from "@tabler/icons-react";
 import classes from "./user-button.module.css";
-import { useUser } from "@supabase/auth-helpers-react";
 import { IconSettings } from "@tabler/icons-react";
 import { IconLogout } from "@tabler/icons-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 export default function UserButton() {
-  const user = useUser();
-  
+  const user = useSelector((state) => state.user.user);
+  const router = useRouter();
+
   const onClickSignOut = async () => {
-    const {error} = await createPagesBrowserClient().auth.signOut();
-    if(error) {
+    const { error } = await createPagesBrowserClient().auth.signOut();
+    if (error) {
       console.error(error.message);
     }
-  }
+  };
 
   return (
     <Menu shadow="md" width="300px">
       <Menu.Target>
         <UnstyledButton className={classes.user}>
           <Group>
-            <Avatar src={user?.user_metadata.avatar_url} radius="xl" />
-
+            <Avatar src={user?.avatar_url} radius="xl" />
             <div style={{ flex: 1 }}>
               <Text c="dimmed" size="xs">
                 {user?.email}
               </Text>
             </div>
-
             <IconChevronRight
               style={{ width: rem(14), height: rem(14) }}
               stroke={1.5}
@@ -41,6 +41,9 @@ export default function UserButton() {
           leftSection={
             <IconSettings style={{ width: rem(14), height: rem(14) }} />
           }
+          onClick={() => {
+            router.push("/settings");
+          }}
         >
           Settings
         </Menu.Item>

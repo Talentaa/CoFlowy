@@ -71,7 +71,7 @@ export default function DocumentEditor(props) {
 
   const userCursor = useMemo(() => {
     return {
-      name: user?.email || getRandomName(),
+      name: user?.username || getRandomName(),
       color: getRandomColor(),
     };
   }, [user]);
@@ -105,30 +105,29 @@ export default function DocumentEditor(props) {
     <>
       <RichTextEditor editor={contentEditor} spellCheck="false">
         <RichTextEditor.Toolbar sticky stickyOffset={60}>
-      <RichTextEditor.ControlsGroup>
-          <RichTextEditor.Bold />
-          <RichTextEditor.Italic />
-          <RichTextEditor.Underline />
-          <RichTextEditor.Strikethrough />
-          <RichTextEditor.ClearFormatting />
-          <RichTextEditor.Code />
-        </RichTextEditor.ControlsGroup>
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.Bold />
+            <RichTextEditor.Italic />
+            <RichTextEditor.Underline />
+            <RichTextEditor.Strikethrough />
+            <RichTextEditor.ClearFormatting />
+            <RichTextEditor.Code />
+          </RichTextEditor.ControlsGroup>
 
-        <RichTextEditor.ControlsGroup>
-          <RichTextEditor.H1 />
-          <RichTextEditor.H2 />
-          <RichTextEditor.H3 />
-          <RichTextEditor.H4 />
-        </RichTextEditor.ControlsGroup>
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.H1 />
+            <RichTextEditor.H2 />
+            <RichTextEditor.H3 />
+            <RichTextEditor.H4 />
+          </RichTextEditor.ControlsGroup>
 
-        <RichTextEditor.ControlsGroup>
-          <RichTextEditor.Blockquote />
-          <RichTextEditor.Hr />
-          <RichTextEditor.BulletList />
-          <RichTextEditor.OrderedList />
-        </RichTextEditor.ControlsGroup>
-
-      </RichTextEditor.Toolbar>
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.Blockquote />
+            <RichTextEditor.Hr />
+            <RichTextEditor.BulletList />
+            <RichTextEditor.OrderedList />
+          </RichTextEditor.ControlsGroup>
+        </RichTextEditor.Toolbar>
         <RichTextEditor.Content />
       </RichTextEditor>
     </>

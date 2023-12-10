@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/layout";
-import { useUser } from "@supabase/auth-helpers-react";
 import { useSelector } from "react-redux";
-import { useState, useMemo, useEffect } from "react";
+import { useMemo, useEffect } from "react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import {
   ActionIcon,
@@ -10,30 +9,24 @@ import {
   Group,
   Stack,
   Text,
-  Divider
+  Divider,
 } from "@mantine/core";
 import { IconSwitchVertical } from "@tabler/icons-react";
 import DocumentFolderCard from "@/components/ui/document-folder-card";
 import { useDisclosure } from "@mantine/hooks";
 
 export default function Home() {
-  const user = useUser();
 
   const [foldersOpened, { toggle: toggleFolders }] = useDisclosure(true);
   const [documentsOpened, { toggle: toggleDocuments }] = useDisclosure(true);
 
   const {
     documents,
-    isLoading: isLoadingDocuments,
-    error: documentsError,
   } = useSelector((state) => state.documents);
 
   const {
     folders,
-    isLoading: isLoadingFolders,
-    error: foldersError,
   } = useSelector((state) => state.folders);
-
 
   const recentFolders = useMemo(() => {
     return [...folders]
@@ -55,10 +48,9 @@ export default function Home() {
 
   useEffect(() => {
     if (documents.length) {
-
       createPagesBrowserClient()
         .from("documents")
-        .select("id, text_preview")
+        .select("id")
         .in(
           "id",
           recentDocuments.map((d) => d.id)

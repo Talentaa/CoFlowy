@@ -8,8 +8,11 @@ import { useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { fetchFolders } from "@/api/folders";
 import { fetchDocuments } from "@/api/documents";
+import { fetchUser } from "@/api/user";
 import * as documentsStore from "@/store/documents";
 import * as foldersStore from "@/store/folders";
+import * as userStore from "@/store/user";
+
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { useRef } from "react";
 
@@ -33,8 +36,16 @@ export default function Layout({ children }) {
     if (user) {
       dispatch(fetchFolders());
       dispatch(fetchDocuments());
+      dispatch(fetchUser(user));
 
       const realtimeEventHandlers = [
+        {
+          event: "user.UPDATE",
+          handler: (payload) => {
+            console.log("user.UPDATE", payload);
+            dispatch(userStore.updateUser(payload.data));
+          },
+        },
         {
           event: "document.INSERT",
           handler: (payload) => {
@@ -103,6 +114,7 @@ export default function Layout({ children }) {
     return () => {
       dispatch(documentsStore.setDocuments([]));
       dispatch(foldersStore.setFolders([]));
+      dispatch(userStore.setUser(null));
 
       if (realtimeChannelRef.current) {
         createPagesBrowserClient().removeChannel(realtimeChannelRef.current);
