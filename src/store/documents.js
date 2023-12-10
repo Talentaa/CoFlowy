@@ -16,13 +16,13 @@ export const documentsSlice = createSlice({
       state.documents = [...state.documents, action.payload];
     },
     updateDocument: (state, action) => {
-      state.documents = state.documents.map((document) => {
-        document.id === action.payload.id ? action.payload : document;
-      });
+      state.documents = state.documents.map((document) => (
+        document.id === action.payload.id ? action.payload : document
+));
     },
     deleteDocument: (state, action) => {
       state.documents = state.documents.filter(
-        (document = document.id !== action.payload.id)
+        (document) => document.id !== action.payload.id
       );
     },
   },

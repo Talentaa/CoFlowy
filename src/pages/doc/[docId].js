@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useUser } from "@supabase/auth-helpers-react";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { createSelector } from "@reduxjs/toolkit";
-import { Flex, Loader, Text, Skeleton } from "@mantine/core";
+import { Flex, Text } from "@mantine/core";
 import dynamic from "next/dynamic";
 import Loading from "@/components/ui/loading";
 

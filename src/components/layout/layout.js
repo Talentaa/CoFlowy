@@ -1,4 +1,4 @@
-import { AppShell, Grid } from "@mantine/core";
+import { AppShell } from "@mantine/core";
 import MainSidebar from "./sidebar/main-sidebar";
 import MainHeader from "./header/main-header";
 

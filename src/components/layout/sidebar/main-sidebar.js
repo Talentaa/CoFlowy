@@ -1,6 +1,4 @@
 import {
-  TextInput,
-  Code,
   Text,
   Group,
   ActionIcon,
@@ -8,11 +6,10 @@ import {
   rem,
   ScrollArea,
 } from "@mantine/core";
-import { IconSearch, IconPlus } from "@tabler/icons-react";
 import UserButton from "./user-button";
 import classes from "./main-sidebar.module.css";
 import SidebarItem from "./sidebar-item";
-import { IconHome, IconShare, IconHelp } from "@tabler/icons-react";
+import { IconHome, IconShare, IconHelp, IconFolder, IconPlus } from "@tabler/icons-react";
 import { useSession } from "@supabase/auth-helpers-react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -82,7 +79,7 @@ export default function MainSidebar() {
             folders
               .filter((folder) => !folder.parent_id)
               .map(({ id, name }) => (
-                <SidebarItem key={id} href={`/folder/${id}`} title={name} />
+                <SidebarItem key={id} href={`/folder/${id}`} title={name} icon={IconFolder} />
               ))}
         </ScrollArea.Autosize>
       </div>

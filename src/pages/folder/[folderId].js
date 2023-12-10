@@ -53,7 +53,6 @@ export default function Folder() {
     selectSubdocuments(state, folderId)
   );
 
-  console.log(subdocuments, subfolders, folder, isLoadingFolder);
 
   const onClickAddDocument = async (folderId) => {
     const res = await dispatch(

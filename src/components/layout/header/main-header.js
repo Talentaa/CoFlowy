@@ -17,8 +17,6 @@ import {
   IconLayoutSidebarRightExpand,
 } from "@tabler/icons-react";
 
-
-
 export default function MainHeader() {
   const dispatch = useDispatch();
   const { desktopSiderbarOpened, mobileSiderbarOpened } = useSelector(

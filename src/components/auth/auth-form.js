@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
@@ -17,8 +16,7 @@ import {
 } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import classes from "./auth-form.module.css";
-import { IconBrandGithub } from "@tabler/icons-react";
-import { IconBrandGoogle } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 
 export default function AuthForm(props) {
   const [type, toggle] = useToggle(["signIn", "signUp"]);

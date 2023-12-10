@@ -21,6 +21,8 @@
 *.pem
 demo.*
 .npmrc
+/scripts
+/supabase
 
 # debug
 npm-debug.log*

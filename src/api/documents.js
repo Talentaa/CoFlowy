@@ -40,8 +40,6 @@ export const updateDocument = createAsyncThunk(
       .update(updates)
       .match({ id });
 
-      console.log(data, error)
-
     if (error) {
       throw error;
     }

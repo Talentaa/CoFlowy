@@ -1,7 +1,7 @@
 import * as Y from "yjs";
 
 import { useDispatch } from "react-redux";
-import { useState, useMemo, useEffect, useLayoutEffect } from "react";
+import { useState, useMemo, useLayoutEffect } from "react";
 import { IndexeddbPersistence } from "y-indexeddb";
 import { HocuspocusProvider } from "@hocuspocus/provider";
 import { useEditor } from "@tiptap/react";
@@ -100,7 +100,6 @@ export default function DocumentEditor(props) {
   );
 
   const isSynced = isLocalSynced || isRemoteSynced;
-  console.log("local remote", isLocalSynced, isRemoteSynced);
 
   return isSynced ? (
     <>

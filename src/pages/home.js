@@ -34,8 +34,6 @@ export default function Home() {
     error: foldersError,
   } = useSelector((state) => state.folders);
 
-  const [textPreviews, setTextPreviews] = useState({});
-  const [loadingTextPreviews, setLoadingTextPreviews] = useState(true);
 
   const recentFolders = useMemo(() => {
     return [...folders]
@@ -57,7 +55,6 @@ export default function Home() {
 
   useEffect(() => {
     if (documents.length) {
-      setLoadingTextPreviews(true);
 
       createPagesBrowserClient()
         .from("documents")
@@ -71,14 +68,6 @@ export default function Home() {
             console.error(error);
             return;
           }
-
-          setTextPreviews(
-            (data || []).reduce((acc, curr) => {
-              acc[curr.id] = curr.text_preview;
-              return acc;
-            }, {})
-          );
-          setLoadingTextPreviews(false);
         });
     }
   }, [documents]);

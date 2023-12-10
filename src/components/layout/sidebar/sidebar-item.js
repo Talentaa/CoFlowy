@@ -1,15 +1,12 @@
-import { UnstyledButton } from "@mantine/core";
 import classes from "./sidebar-item.module.css";
 import Link from "next/link";
-import { IconFolder } from "@tabler/icons-react";
-export default function SidebarItem({href, title, icon: Icon = IconFolder}) {
+export default function SidebarItem({ href, title, icon: SidebarIcon}) {
   return (
-    
-      <Link href={href} className={classes.link}>
-        <div className={classes.linkInner}>
-          <Icon size={20} className={classes.linkIcon} stroke={1.5} />
-          <span>{title}</span>
-        </div>
+    <div className={classes.link}>
+      <SidebarIcon size={20} className={classes.linkIcon} stroke={1.5} />
+      <Link href={href} className={classes.linkInner}>
+        {title}
       </Link>
+    </div>
   );
 }

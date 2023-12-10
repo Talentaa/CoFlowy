@@ -1,6 +1,4 @@
 import Head from "next/head";
-import classes from "@/styles/index.module.css";
-import { Overlay, Container, Title, Button, Text } from "@mantine/core";
 import { Hero } from "@/components/index/hero";
 import { Features } from "@/components/index/features";
 

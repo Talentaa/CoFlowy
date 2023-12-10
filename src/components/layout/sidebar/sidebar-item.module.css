@@ -3,11 +3,10 @@
   align-items: center;
   width: 100%;
   padding: rem(8px) var(--mantine-spacing-xs);
-  text-decoration: none;
   border-radius: var(--mantine-radius-sm);
   font-size: var(--mantine-font-size-xs);
   font-weight: 500;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  
 
   &:hover {
     background-color: light-dark(
@@ -19,9 +18,8 @@
 }
 
 .linkInner {
-  display: flex;
-  align-items: center;
-  flex: 1;
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
 }
 
 .linkIcon {
