@@ -12,12 +12,11 @@ export function Hero() {
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
             fully featured
           </Text>{' '}
-          React components and hooks library
+          online collaborative document editor
         </h1>
 
         <Text className={classes.description} color="dimmed">
-          Build fully functional accessible web applications with ease – Mantine includes more than
-          100 customizable components and hooks to cover you in any situation
+        CoFlowy is a suite of open source content editing and real-time collaboration tools for developers building apps like Notion or Google Docs.
         </Text>
 
         <Group className={classes.controls}>

@@ -55,12 +55,12 @@ export function Features() {
     <Container size="lg" py="xl">
       <Group justify="center">
         <Badge variant="filled" size="lg">
-          Best company ever
+          Best editor ever
         </Badge>
       </Group>
 
       <Title order={2} className={classes.title} ta="center" mt="sm">
-        Integrate effortlessly with any technology stack
+      A new level of editor experience.
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md">

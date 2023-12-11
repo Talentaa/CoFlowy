@@ -97,7 +97,6 @@ async function onStoreDocument({ documentName, document: ydoc, context }) {
   if (!supabaseClient) {
     throw new Error("Invalid session.");
   }
-
 }
 
 module.exports = { onLoadDocument, onStoreDocument };

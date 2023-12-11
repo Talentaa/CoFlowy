@@ -23,10 +23,10 @@ import {
   IconShare3,
 } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { notifications } from "@mantine/notifications";
 
 export default function ShareDocumentButton(props) {
-  const { documentId, children } = props;
+  const { documentId } = props;
 
   const [modalOpened, { open: modalOpen, close: modalClose }] =
     useDisclosure(false);
@@ -36,31 +36,8 @@ export default function ShareDocumentButton(props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   const [userQuery, setUserQuery] = useState("");
-  const [addUserFieldError, setAddUserFieldError] = useState();
   const session = useSession();
   const supabase = createPagesBrowserClient();
-
-  // const { documentInheritedFrom } = useSelector((state) => ({
-  //   documentInheritedFrom: state.documents.documents.find(
-  //     (d) => d.id === shareSettings?.document_id
-  //   ),
-  // }));
-
-  // const disableInheritance = async () => {
-  //   const { error } = await supabase
-  //     .from("documents")
-  //     .update({ share_settings: null })
-  //     .match({ id: documentId })
-  //     .single();
-
-  //   if (error) {
-  //     console.error(error);
-  //     return setError(error.message);
-  //   }
-
-  //   setShareSettings(null);
-  //   setInherited(false);
-  // };
 
   const updateShareSettings = async (settings) => {
     if (!shareSettings) {
@@ -92,23 +69,7 @@ export default function ShareDocumentButton(props) {
     setShareSettings(share_settings);
   };
 
-  // const deleteShareSettings = async () => {
-  //   const { error } = await supabase
-  //     .from("shares")
-  //     .delete()
-  //     .match({ id: shareSettings.id });
-
-  //   if (error) {
-  //     console.error(error);
-  //     return setError(error.message);
-  //   }
-
-  //   setShareSettings(null);
-  // };
-
   const handleAddUser = async () => {
-    setAddUserFieldError("");
-
     if (!userQuery) {
       return;
     }
@@ -120,20 +81,35 @@ export default function ShareDocumentButton(props) {
       .maybeSingle();
 
     if (error) {
-      return setAddUserFieldError("An error occured.");
+      return notifications.show({
+        color: "red",
+        title: "Error",
+        message: "An error occured.",
+      });
     }
 
     if (!foundUser) {
-      return setAddUserFieldError("No user found.");
+      return notifications.show({
+        color: "red",
+        title: "Error",
+        message: "No user found.",
+      });
     }
 
     if (session?.user.id === foundUser.id) {
-      return setAddUserFieldError("You cannot invite yourself.");
+      return notifications.show({
+        color: "red",
+        title: "Error",
+        message: "You cannot invite yourself.",
+      });
     }
 
     if (shareSettings?.user_permissions?.[foundUser.id]) {
-      setAddUserFieldError("This user has already been added.");
-      return;
+      return notifications.show({
+        color: "red",
+        title: "Error",
+        message: "This user has already been added.",
+      });
     }
 
     updateShareSettings({
